@@ -71,7 +71,11 @@ export default async function Home() {
             {goodFirstIssue.labels.map((label: goodFirstIssueLabelType) => (
               <div
                 key={label.id}
-                className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-1 md:py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white"
+                className={`center relative inline-block select-none whitespace-nowrap rounded-lg py-1 md:py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white ${
+                  label.name === 'good first issue'
+                    ? 'bg-purple-600'
+                    : 'bg-blue-500'
+                }`}
               >
                 <div className="mt-px">{label.name}</div>
               </div>
