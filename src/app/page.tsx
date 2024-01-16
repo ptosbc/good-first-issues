@@ -37,8 +37,8 @@ export default async function Home() {
   const goodFirstIssuesData = await getGoodFirstIssuesData();
 
   return (
-    <main className="bg-gradient-to-br dark:bg-gradient-to-bl flex min-h-screen flex-col items-center justify-between">
-      <h1 className="mb-3 text-3xl md:text-4xl font-bold"><u>Good First Issues</u></h1>
+    <main className="flex min-h-screen flex-col items-center justify-between p-12">
+      <h1 className="mb-3 text-2xl md:text-4xl font-bold"><u>Good First Issues</u></h1>
 
       <p className="mb-5 text-sm font-bold">Find latest good first issues</p>
 
