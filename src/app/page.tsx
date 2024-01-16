@@ -37,17 +37,19 @@ export default async function Home() {
   const goodFirstIssuesData = await getGoodFirstIssuesData();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-12">
-      <h1 className="mb-3 text-2xl md:text-4xl font-bold">Good First Issues</h1>
+    <main className="bg-gradient-to-br dark:bg-gradient-to-bl flex min-h-screen flex-col items-center justify-between">
+      <h1 className="mb-3 text-3xl md:text-4xl font-bold"><u>Good First Issues</u></h1>
 
-      <p className="mb-5 text-sm font-bold">Find latest good first issues.</p>
+      <p className="mb-5 text-sm font-bold">Find latest good first issues</p>
 
       {goodFirstIssuesData.map((goodFirstIssue: goodFirstIssueType) => (
         <Link
-          key={goodFirstIssue.id}
-          href={goodFirstIssue.html_url}
-          className="block max-w-xl md:max-w-3xl w-full p-6 mb-5 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
-        >
+        key={goodFirstIssue.id}
+        href={goodFirstIssue.html_url}
+        className="block max-w-xl md:max-w-3xl w-full p-6 mb-5 bg-gradient-to-br border border-green-500 rounded-sm shadow hover:bg-green-100"
+      >
+      
+      
           <h5 className="mb-2 text-base md:text-2xl font-bold tracking-tight text-gray-900">
             {goodFirstIssue.title}
           </h5>
@@ -71,7 +73,10 @@ export default async function Home() {
             {goodFirstIssue.labels.map((label: goodFirstIssueLabelType) => (
               <div
                 key={label.id}
-                className="center relative inline-block select-none whitespace-nowrap rounded-lg bg-blue-500 py-1 md:py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white"
+                
+                className={`center relative inline-block select-none whitespace-nowrap rounded-lg py-1 md:py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white ${
+                  label.name === 'good first issue' ? 'bg-red-600' : 'bg-blue-500'
+                }`}
               >
                 <div className="mt-px">{label.name}</div>
               </div>
